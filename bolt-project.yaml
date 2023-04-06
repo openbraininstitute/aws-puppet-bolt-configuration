@@ -1,0 +1,5 @@
+---
+name: aws_poc
+plans:
+  - aws_poc
+modules: []
