@@ -1,0 +1,44 @@
+groups:
+- name: ssh_bastion_hosts
+  targets:
+    - uri: ssh.shapes-registry.org
+      name: ssh_bastion_a
+      config:
+        ssh:
+          user: ec2-user
+          run-as: root
+          run-as-command:
+            - sudo
+            - "-nkSEu"
+- name: hpc_compute_vms
+  targets:
+    - uri: sbo-poc-compute1.shapes-registry.org
+      name: compute1
+      config:
+        ssh:
+          user: ubuntu
+          run-as: root
+          run-as-command:
+            - sudo
+            - "-nkSEu"
+    - uri: sbo-poc-compute2.shapes-registry.org
+      name: compute2
+      config:
+        ssh:
+          user: ubuntu
+          run-as: root
+          run-as-command:
+            - sudo
+            - "-nkSEu"
+  config:
+    transport: ssh
+    ssh:
+      user: ec2-user
+      run-as: root
+      run-as-command:
+        - sudo
+        - "-nkSEu"
+      # if not set: use ssh agent
+      #private-key:  /Users/verachte/.ssh/aws_coreservices_private_key
+      host-key-check: false
+      load-config: false

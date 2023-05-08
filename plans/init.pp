@@ -6,6 +6,11 @@ plan aws_poc () {
 
   # Apply some manifest to create local users on the group ssh_bastion_hosts
   apply('ssh_bastion_hosts') {
+    $only_hpc = false
+    include aws_poc::bbp_users
+  }
+  apply('hpc_compute_vms') {
+    $only_hpc = true
     include aws_poc::bbp_users
   }
   return "done"

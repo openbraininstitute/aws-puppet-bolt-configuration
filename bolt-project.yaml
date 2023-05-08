@@ -2,4 +2,7 @@
 name: aws_poc
 plans:
   - aws_poc
-modules: []
+modules:
+  - name: puppetlabs-stdlib
+    version_requirement: 8.6.0
+
