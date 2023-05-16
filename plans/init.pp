@@ -8,7 +8,10 @@ plan aws_poc () {
   apply('ssh_bastion_hosts') {
     $only_hpc = false
     include aws_poc::bbp_users
+    include aws_poc::bastion_hosts_packages
+    include aws_poc::aws_filesystems
   }
+  # Also creates users on the HPC compute VMs
   apply('hpc_compute_vms') {
     $only_hpc = true
     include aws_poc::bbp_users

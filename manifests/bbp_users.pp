@@ -36,6 +36,16 @@ class aws_poc::bbp_users () {
       'public_key' => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHdskRd816hFtV2SC01KvAtKFTq8gEfQw7ewFylGo/RO ioannis.magkanaris@epfl.ch',
       'hpc'        => true,
     },
+    {
+      'name'       => 'kumbhar',
+      'public_key' => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ4yQxkIFJ/QVFsvLL1of5j0EeaWt5EBkZJJR7ooZBRm AWS HPC PoC Testing 2023',
+      'hpc'        => true,
+    },
+    {
+      'name'       => 'srivas',
+      'public_key' => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEIlqFDPBHsNjwBGJsfoQEwLrhpNS0/J0DO2irrcvoHl AWS HPC PoC Testing 2023',
+      'hpc'        => true,
+    },
   ]
 
   $bbp_users.each |$person| {
