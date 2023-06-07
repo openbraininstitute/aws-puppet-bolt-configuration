@@ -56,6 +56,16 @@ class aws_poc::bbp_users () {
       'public_key' => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJgSbMMZ1KDAuxUBxI04PqBoU6v4eoU3B6sjh0iTx864 aws',
       'hpc'        => false,
     },
+    {
+      'name'       => 'matwolf',
+      'public_key' => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICByzT/43w/0uNeVPydcb/UIwtD9jsJ+FrCslA8/6O5B matwolf@bbl-1k9vhr3',
+      'hpc'        => true,
+    },
+    {
+      'name'       => 'gevaert',
+      'public_key' => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBCRTRSpJMLRRk0GuIcQ/OU5fGwgX0YhIMsy/sSgdzQc gevaert@theend',
+      'hpc'        => false,
+    },
   ]
 
   $bbp_users.each |$person| {
