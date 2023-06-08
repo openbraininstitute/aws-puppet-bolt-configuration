@@ -5,4 +5,5 @@ plans:
 modules:
   - name: puppetlabs-stdlib
     version_requirement: 8.6.0
-
+  - name: puppet-selinux
+    version_requirement: 3.4.1
