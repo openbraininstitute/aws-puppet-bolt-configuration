@@ -120,7 +120,7 @@ class aws_poc::bbp_users () {
       'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBCRTRSpJMLRRk0GuIcQ/OU5fGwgX0YhIMsy/sSgdzQc gevaert@theend',
       'sudo_on_bastion'    => false,
       'create_on_compute'  => true,
-      'sudo_on_compute'    => false,
+      'sudo_on_compute'    => true,
       'create_on_pcluster' => true,
       'sudo_on_pcluster'   => false,
       'uid'                => 1011,
