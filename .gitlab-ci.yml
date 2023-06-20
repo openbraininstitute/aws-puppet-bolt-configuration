@@ -1,0 +1,15 @@
+---
+include:
+  - file: templates/ci-for-modules.yml
+    project: cs/puppet/puppet-ci-jobs
+    ref: main
+
+sync_environment:
+  only:
+    refs:
+      - never    
+
+# No need to disable sync_prod because this repo doesn't use a production branch
+#sync_prod:
+#  rules:
+#    - when: never

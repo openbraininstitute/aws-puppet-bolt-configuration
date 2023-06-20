@@ -6,8 +6,8 @@ class aws_poc::filesystem_compute_efs () {
     mode   => '0755',
   }
   mount { 'compute-efs':
-    name    => '/compute-efs',
     ensure  => 'mounted',
+    name    => '/compute-efs',
     atboot  => false,
     fstype  => 'nfs',
     device  => 'compute-efs.shapes-registry.org:/',

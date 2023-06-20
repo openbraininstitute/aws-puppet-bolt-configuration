@@ -6,8 +6,8 @@ class aws_poc::filesystem_nexus_app_efs () {
     mode   => '0755',
   }
   mount { 'nexus-app-efs':
-    name    => '/nexus-app-efs',
     ensure  => 'mounted',
+    name    => '/nexus-app-efs',
     atboot  => false,
     fstype  => 'nfs',
     device  => 'nexus-app-efs.shapes-registry.org:/',

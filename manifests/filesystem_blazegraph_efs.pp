@@ -6,8 +6,8 @@ class aws_poc::filesystem_blazegraph_efs () {
     mode   => '0755',
   }
   mount { 'blazegraph-efs':
-    name    => '/blazegraph-efs',
     ensure  => 'mounted',
+    name    => '/blazegraph-efs',
     atboot  => false,
     fstype  => 'nfs',
     device  => 'blazegraph-efs.shapes-registry.org:/',

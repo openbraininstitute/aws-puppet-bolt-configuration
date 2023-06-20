@@ -1,0 +1,18 @@
+[
+<%
+$last_name = $bbp_users[-1]['name']
+
+$bbp_users.each |$person| {
+  if $person['create_on_pcluster'] {
+%>
+  {
+    "name"   : "<%= $person['name'] %>",
+    "uid"    : <%= $person['uid'] %>,
+    "shell"  : "<%= $person['shell'] %>",
+    "sudo"   : <%= $person['sudo_on_pcluster'] %>
+  }<% if $person['name'] != $last_name { %>,<% } %>
+<%
+  }
+}
+%>
+]

@@ -2,7 +2,7 @@
 # Each account will need some ssh key so users can login.
 class aws_poc::bbp_users () {
   notify { 'print_node_type':
-    message => "node_type is currently ${node_type}",
+    message => "node_type is currently ${::node_type}",
   }
 
   $bbp_users = [
@@ -150,10 +150,10 @@ class aws_poc::bbp_users () {
     $uid = $person['uid']
     $home_dir = "/compute-efs/home/${user_name}"
     $shell = $person['shell']
-    
-    if (($node_type == "bastion") or (($node_type == "compute") and $create_on_compute) or (($node_type == "pcluster") and $create_on_pcluster)) {
+
+    if (($::node_type == 'bastion') or (($::node_type == 'compute') and $create_on_compute) or (($::node_type == 'pcluster') and $create_on_pcluster)) {
       notify { "print_user_${user_name}":
-        message => "Checking ${user_name}: to be created on this node with type ${node_type}",
+        message => "Checking ${user_name}: to be created on this node with type ${::node_type}",
       }
       group { $user_name:
         ensure => present,
@@ -166,7 +166,7 @@ class aws_poc::bbp_users () {
         gid    => $uid,
         shell  => $shell,
       }
-      file { "${home_dir}":
+      file { $home_dir:
         ensure  => directory,
         owner   => $user_name,
         group   => $user_name,
@@ -200,7 +200,7 @@ class aws_poc::bbp_users () {
         group   => $user_name,
         path    => ['/bin', '/usr/bin'],
       }
-      
+
       exec { "add_public_key_to_authorized_keys_for_${user_name}":
         require => Exec["generate_ssh_keypair_for_${user_name}"],
         command => "cat ${home_dir}/.ssh/id_rsa.pub >> ${home_dir}/.ssh/authorized_keys",
@@ -209,10 +209,10 @@ class aws_poc::bbp_users () {
         path    => ['/bin', '/usr/bin'],
       }
 
-      if ((($node_type == "bastion") and $sudo_on_bastion) or (($node_type == "compute") and $sudo_on_compute) or (($node_type == "pcluster") and $sudo_on_pcluster)) {
+      if ((($::node_type == 'bastion') and $sudo_on_bastion) or (($::node_type == 'compute') and $sudo_on_compute) or (($::node_type == 'pcluster') and $sudo_on_pcluster)) {
         # Also give sudo
         notify { "create sudo for ${user_name}":
-          message => "User ${user_name} will get sudo on node of type ${node_type}",
+          message => "User ${user_name} will get sudo on node of type ${::node_type}",
         }
         file { "/etc/sudoers.d/${user_name}":
           ensure  => present,
@@ -223,12 +223,22 @@ class aws_poc::bbp_users () {
         }
       } else {
         notify { "remove sudo for ${user_name}":
-          message => "User ${user_name} will not get sudo on node of type ${node_type}",
+          message => "User ${user_name} will not get sudo on node of type ${::node_type}",
         }
         file { "/etc/sudoers.d/${user_name}":
           ensure => absent,
         }
       }
+    }
+  }
+  # Generate users json file for Omar's parallelcluster compute node initialization script
+  if ($::node_type == 'bastion') {
+    file { '/compute-efs/users.json':
+      ensure  => file,
+      content => epp("${module_name}/users.json.epp", {'bbp_users' => $bbp_users}),
+      owner   => 'root',
+      group   => 'root',
+      mode    => '0700',
     }
   }
 }
