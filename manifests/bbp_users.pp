@@ -137,6 +137,17 @@ class aws_poc::bbp_users () {
       'uid'                => 1012,
       'shell'              => '/bin/bash',
     },
+    {
+      'name'               => 'heeren',
+      'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICCwlGHR/vz8esSOTMtXT0qnO7zg+kjPJYicxjyryO3h heeren@bbd-fsczyl3',
+      'sudo_on_bastion'    => false,
+      'create_on_compute'  => true,
+      'sudo_on_compute'    => false,
+      'create_on_pcluster' => true,
+      'sudo_on_pcluster'   => true,
+      'uid'                => 1013,
+      'shell'              => '/bin/bash',
+    },
   ]
 
   $bbp_users.each |$person| {
