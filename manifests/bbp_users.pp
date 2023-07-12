@@ -59,6 +59,7 @@ class aws_poc::bbp_users () {
       'create_on_pcluster' => false,
       'sudo_on_pcluster'   => false,
       'uid'                => 1005,
+      'shell'              => '/bin/bash',
     },
     {
       'name'               => 'magkanar',
@@ -170,7 +171,7 @@ class aws_poc::bbp_users () {
     $create_on_pcluster = $person['create_on_pcluster']
     $sudo_on_pcluster = $person['sudo_on_pcluster']
     $uid = $person['uid']
-    $home_dir = "/compute-efs/home/${user_name}"
+    $home_dir = "/sbo/home/${user_name}"
     $shell = $person['shell']
 
     if (($::node_type == 'bastion') or (($::node_type == 'compute') and $create_on_compute) or (($::node_type == 'pcluster') and $create_on_pcluster)) {
@@ -216,7 +217,7 @@ class aws_poc::bbp_users () {
       }
 
       exec { "generate_ssh_keypair_for_${user_name}":
-        command => "ssh-keygen -t rsa -b 4096 -C ${user_name} -f /compute-efs/home/${user_name}/.ssh/id_rsa -N ''",
+        command => "ssh-keygen -t rsa -b 4096 -C ${user_name} -f /${home_dir}/.ssh/id_rsa -N ''",
         creates => "${home_dir}/.ssh/id_rsa",
         user    => $user_name,
         group   => $user_name,
@@ -255,7 +256,13 @@ class aws_poc::bbp_users () {
   }
   # Generate users json file for Omar's parallelcluster compute node initialization script
   if ($::node_type == 'bastion') {
-    file { '/compute-efs/users.json':
+    file { '/sbo/home/resources':
+      ensure => directory,
+      owner  => 'root',
+      group  => 'root',
+      mode   => '0700',
+    }
+    file { '/sbo/home/resources/users.json':
       ensure  => file,
       content => epp("${module_name}/users.json.epp", {'bbp_users' => $bbp_users}),
       owner   => 'root',

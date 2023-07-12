@@ -21,10 +21,10 @@ plan aws_poc () {
     include aws_poc::compute_vms_packages
     include aws_poc::bbp_users
   }
-  apply('pcluster_host') {
-    $node_type = 'pcluster'
-    include aws_poc::filesystem_compute_efs
-    include aws_poc::bbp_users
-  }
+#  apply('pcluster_host') {
+#    $node_type = 'pcluster'
+#    include aws_poc::filesystem_compute_efs
+#    include aws_poc::bbp_users
+#  }
   return 'done'
 }
