@@ -160,6 +160,28 @@ class aws_poc::bbp_users () {
       'uid'                => 1014,
       'shell'              => '/bin/bash',
     },
+    {
+      'name'               => 'ivaska',
+      'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0+0u4HRr2E8JXZVW8x2upa0ZRcx/RW4seZWFK1Bk/9WKSOkMyCNozblvvZE3w1U/ndNFgZSk+zgdOyTc3He8tU0cVyKKG15gugCXAsx1TyfcHCKRBmtT7rf/Ab7/r1NTKAjz9zG5tddFQOuIX3Mn0CR5v7ICqnw8la7loG9a4x9+gx7rIUP7DBdXdsW2bt8RWDcE31NluHmG1mytaI1rDgQcagz9skbzJC7dJTwT100Tci3tGZXERU7PknwiFOOgtP31rmYUFHFru2IyPnrZ4Vqrc5jOvWjtDdBrgy3JadK9cjQwqb2Yw71MjhVIVR8tGucMnebdauOoacM6Xmn9R ivaska@bluebrain',
+      'sudo_on_bastion'    => false,
+      'create_on_compute'  => true,
+      'sudo_on_compute'    => false,
+      'create_on_pcluster' => true,
+      'sudo_on_pcluster'   => false,
+      'uid'                => 1015,
+      'shell'              => '/bin/bash',
+    },
+    {
+      'name'               => 'bbp-workflow-sa',
+      'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0+0u4HRr2E8JXZVW8x2upa0ZRcx/RW4seZWFK1Bk/9WKSOkMyCNozblvvZE3w1U/ndNFgZSk+zgdOyTc3He8tU0cVyKKG15gugCXAsx1TyfcHCKRBmtT7rf/Ab7/r1NTKAjz9zG5tddFQOuIX3Mn0CR5v7ICqnw8la7loG9a4x9+gx7rIUP7DBdXdsW2bt8RWDcE31NluHmG1mytaI1rDgQcagz9skbzJC7dJTwT100Tci3tGZXERU7PknwiFOOgtP31rmYUFHFru2IyPnrZ4Vqrc5jOvWjtDdBrgy3JadK9cjQwqb2Yw71MjhVIVR8tGucMnebdauOoacM6Xmn9R ivaska@bluebrain',
+      'sudo_on_bastion'    => false,
+      'create_on_compute'  => false,
+      'sudo_on_compute'    => false,
+      'create_on_pcluster' => true,
+      'sudo_on_pcluster'   => false,
+      'uid'                => 1016,
+      'shell'              => '/bin/bash',
+    },
   ]
 
   $bbp_users.each |$person| {

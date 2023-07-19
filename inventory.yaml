@@ -28,17 +28,18 @@ groups:
 #        osfamily: RedHat
 #      features:
 #        - puppet-agent
-- name: hpc_compute_vms
-  targets:
-    - uri: sbo-poc-compute1.shapes-registry.org
-      name: compute1
-      config:
-        ssh:
-          user: ubuntu
-          run-as: root
-          run-as-command:
-            - sudo
-            - "-nkSEu"
+# Also the first test VM was deleted.
+#- name: hpc_compute_vms
+#  targets:
+#    - uri: sbo-poc-compute1.shapes-registry.org
+#      name: compute1
+#      config:
+#        ssh:
+#          user: ubuntu
+#          run-as: root
+#          run-as-command:
+#            - sudo
+#            - "-nkSEu"
 ## The second test VM was deleted.
 #    - uri: sbo-poc-compute2.shapes-registry.org
 #      name: compute2

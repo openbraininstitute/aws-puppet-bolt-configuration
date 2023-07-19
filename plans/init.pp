@@ -15,12 +15,14 @@ plan aws_poc () {
     include aws_poc::selinux
   }
   # Also creates users on the HPC compute VMs
-  apply('hpc_compute_vms') {
-    $node_type = 'compute'
-    include aws_poc::filesystem_compute_efs
-    include aws_poc::compute_vms_packages
-    include aws_poc::bbp_users
-  }
+  # They're currently deleted.
+#  apply('hpc_compute_vms') {
+#    $node_type = 'compute'
+#    include aws_poc::filesystem_compute_efs
+#    include aws_poc::compute_vms_packages
+#    include aws_poc::bbp_users
+#  }
+# At the moment done by Omar with pcluster config
 #  apply('pcluster_host') {
 #    $node_type = 'pcluster'
 #    include aws_poc::filesystem_compute_efs
