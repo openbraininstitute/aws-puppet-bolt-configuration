@@ -182,6 +182,17 @@ class aws_poc::bbp_users () {
       'uid'                => 1016,
       'shell'              => '/bin/bash',
     },
+    {
+      'name'               => 'agarner',
+      'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDqOoT/0acCCgQJpc2GUpRQszbjCu3T/wTF+u75sYHgBVLcI5FSE1dlepZEUAdkJLthDrAX+QYac+3bByRZpgJrMeIU8xQjX++udaVvCprBUKagSlUN3oxGl4JSWRMvybzEYxV9QU7xiPJ4XYpXzkTpIuQC+TKylNZtKx9ixrJ2NHD1YGcwAL43B7jLC2lWSsS62m0oMQfZPHxCYGJq0xTtAjq9N9e9B5I2o7Ig1bAGVjRKSK8LdP5JPGoCILv2Wa6fEhFASOCcNbiJg+hXR/YxzDn7IdjJU0CENorPuvZk+7qWDZ07LA9lte/ESXv9BPlb5KkDKgSZ8Cvb2qWxh84/OYqQm251zqS5/ppjUs75q1MrqgFxbf+esRvR59b2B5/nFNV5UPaEBOYwYzLskfDZQ9/xA+v5g0DBR89HAqh2WyhBjUuEg7aS23/Kqj88P6HJTO/ODMpHpGtMiqFzQyqQHlrj+lI/MKdxgPmhRULcwxJ2vlkY24rEjkA6oxq9CqM= agarner@bbd-1w2mlh3',
+      'sudo_on_bastion'    => true,
+      'create_on_compute'  => true,
+      'sudo_on_compute'    => true,
+      'create_on_pcluster' => true,
+      'sudo_on_pcluster'   => true,
+      'uid'                => 1017,
+      'shell'              => '/bin/bash',
+    },
   ]
 
   $bbp_users.each |$person| {
