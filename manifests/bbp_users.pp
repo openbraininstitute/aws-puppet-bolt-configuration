@@ -193,6 +193,17 @@ class aws_poc::bbp_users () {
       'uid'                => 1017,
       'shell'              => '/bin/bash',
     },
+    {
+      'name'               => 'pigueira',
+      'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPBdCyCV8hkvVzMdJjFw7UkOlbO9ldLxfEPqUSP+nwvy',
+      'sudo_on_bastion'    => true,
+      'create_on_compute'  => true,
+      'sudo_on_compute'    => true,
+      'create_on_pcluster' => true,
+      'sudo_on_pcluster'   => true,
+      'uid'                => 1018,
+      'shell'              => '/bin/bash',
+    },
   ]
 
   $bbp_users.each |$person| {
