@@ -7,17 +7,6 @@ class aws_poc::bbp_users () {
 
   $bbp_users = [
     {
-      'name'               => 'kenyon',
-      'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPWvRJ0DJf4R45xM2pf9Ok0XmP/kgFkrb+DB5gLCmmSy mike 2023 sbo aws testing',
-      'sudo_on_bastion'    => true,
-      'create_on_compute'  => true,
-      'sudo_on_compute'    => true,
-      'create_on_pcluster' => true,
-      'sudo_on_pcluster'   => true,
-      'uid'                => 1001,
-      'shell'              => '/bin/bash',
-    },
-    {
       'name'               => 'verachte',
       'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCw84Bv2npIvI5l9F8KeHPbdxPhykNduYetKMzeFT6BlEN7GKeDsgP5hHjf54aYugYovEgPO6fVf9L+NVHh8NaXgOSnhXjI7r4Iz4hDkOIxHdDHk0VHXZ3aaKA3XhZteJtKXfez1PMFon/AOXSEZuou/kpyFYZdsGKpX1V6RcF8f3Xd1HmIDrFQ4i136RJZzWMgjZAdFEqLdQRk1uiN1MvsHOnCAyMBvgid7gYvmgJIJNLFlh6yQlketZDEnQuHsPO+q43GeakWQ4CF7nfJyds1PD8jjsI/Nhk8ZWDj4A5v1ULVdNqYMcVslC87PdhsuPEw+RA8zAquEq7TGZjmJqzPE9OEq0iD+sj8qq7ziPStp+JNHJdDaSeO3g08SeQiklFvvcQv5rNkh+uNKeln2lXPOgrNV8oajpYsomNKif/ORz1t9tUKbsIiWXeNnJyJrsDZlkll8xEJtbNJY2PDL47KdAdADEZZjOvNAo3L2jWDmA/swRBnZRX9yYaJ7zxmFuFpw4/KFpUhXH5kbckZ+BfjENuRdm/PUDtyyeYICpL6AFaGzMF91b2CGftfHI4Nq7D2Xf1yQcEwP4ZHymDwlAu+H247WGprYD71bCbKYDHGzIDgG8f4jL2PdbwuNZ0fIP42K334IfFRpfK0fhJ8kSkr0xT4Sdg8NeNHba6Vcg+uiQ== Dries Verachtert - mac',
       'sudo_on_bastion'    => true,
