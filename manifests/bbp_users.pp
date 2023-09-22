@@ -2,7 +2,7 @@
 # Each account will need some ssh key so users can login.
 class aws_poc::bbp_users () {
   notify { 'print_node_type':
-    message => "node_type is currently ${::node_type}",
+    message => "node_type is currently ${facts['node_type']}",
   }
 
   $bbp_users = [
@@ -193,6 +193,18 @@ class aws_poc::bbp_users () {
       'uid'                => 1018,
       'shell'              => '/bin/bash',
     },
+    {
+      'name'               => 'danielfr',
+      'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCmYehUxUHM6RkLCHqvV4tsd7n2RspH3xATM7TIH6IF5TsiF4nBKk//FsdB6U5XJ4KMQTQpWTswRFwVyOgfSCYaGY9RGRZV+54ufqXkXwrvnF3p1CkMNvimFe4zFAsnxs5Uc3PXN3QKtsNrVx4Xt9KyEj5LyYuMKoBbQkgVB8hsvOa+jJQV7HtBqioECaXTz6NOkjDYkzsLc1lU8ldk4YMrbX846c41lVdTssVNlL8tnRH+onUuGYe0JZecm2EU/72N1gJXbT5FPBIfmLLAX8onlUtarFcQRa2CyuPd0pIv5GDcBmD2Z0otKH3eZXPBW5bwB3/BLHSiSFcyMmjAiotBkp0AgPBXzaVbsXUSnH92VvfUaCnM754Z+En9uq+7IxgBgtlBg3o75RuVuAuMB7A5zPXGNc3HUs0y9xvzjhMsCDHveUws35qGJoFBR+v3sdfTSfdl/fu2YYprVxSBVtuq8unTO5MNUShVkOaq7M1Ed7yrsFGfC7vHzpydQeD5L3FKSuRr+om003ZlCprNR3CsKKTQvaDdIk8Ur9PQgOw2rxLWhPN8wyagugOSdPhZ4c0ClMOXZe72iQPIEhpMK5dMoNnTLVXHdG8ZY5+FMgctqF/e6pdZn21wGyd629iH/r7WGNsx7eqbajhkF9OWQpP5Oar2wT0/t8KbmPo6nSuvWQ== danielfr@epfl',
+      'sudo_on_bastion'    => true,
+      'create_on_compute'  => true,
+      'sudo_on_compute'    => true,
+      'create_on_pcluster' => true,
+      'sudo_on_pcluster'   => true,
+      'uid'                => 1019,
+      'shell'              => '/bin/bash',
+    },
+
   ]
 
   $bbp_users.each |$person| {
@@ -207,9 +219,9 @@ class aws_poc::bbp_users () {
     $home_dir = "/sbo/home/${user_name}"
     $shell = $person['shell']
 
-    if (($::node_type == 'bastion') or (($::node_type == 'compute') and $create_on_compute) or (($::node_type == 'pcluster') and $create_on_pcluster)) {
+    if (($facts['node_type'] == 'bastion') or (($facts['node_type'] == 'compute') and $create_on_compute) or (($facts['node_type'] == 'pcluster') and $create_on_pcluster)) {
       notify { "print_user_${user_name}":
-        message => "Checking ${user_name}: to be created on this node with type ${::node_type}",
+        message => "Checking ${user_name}: to be created on this node with type ${facts['node_type']}",
       }
       group { $user_name:
         ensure => present,
@@ -265,10 +277,10 @@ class aws_poc::bbp_users () {
         path    => ['/bin', '/usr/bin'],
       }
 
-      if ((($::node_type == 'bastion') and $sudo_on_bastion) or (($::node_type == 'compute') and $sudo_on_compute) or (($::node_type == 'pcluster') and $sudo_on_pcluster)) {
+      if ((($facts['node_type'] == 'bastion') and $sudo_on_bastion) or (($facts['node_type'] == 'compute') and $sudo_on_compute) or (($facts['node_type'] == 'pcluster') and $sudo_on_pcluster)) {
         # Also give sudo
         notify { "create sudo for ${user_name}":
-          message => "User ${user_name} will get sudo on node of type ${::node_type}",
+          message => "User ${user_name} will get sudo on node of type ${facts['node_type']}",
         }
         file { "/etc/sudoers.d/${user_name}":
           ensure  => present,
@@ -279,7 +291,7 @@ class aws_poc::bbp_users () {
         }
       } else {
         notify { "remove sudo for ${user_name}":
-          message => "User ${user_name} will not get sudo on node of type ${::node_type}",
+          message => "User ${user_name} will not get sudo on node of type ${facts['node_type']}",
         }
         file { "/etc/sudoers.d/${user_name}":
           ensure => absent,
@@ -288,7 +300,7 @@ class aws_poc::bbp_users () {
     }
   }
   # Generate users json file for Omar's parallelcluster compute node initialization script
-  if ($::node_type == 'bastion') {
+  if ($facts['node_type'] == 'bastion') {
     file { '/sbo/home/resources':
       ensure => directory,
       owner  => 'root',
