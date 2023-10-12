@@ -204,6 +204,17 @@ class aws_poc::bbp_users () {
       'uid'                => 1019,
       'shell'              => '/bin/bash',
     },
+    {
+      'name'               => 'acfleury',
+      'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDGMR9HxLSiu8/7Lhij+0yT1kGIzLLXosyoOi1MiF/mENrTR863ekNlH6AfIsOjRPCTGLct5x2au+6X2D5xuQ7THQUl7xQ+JX5rJsMIIIynWBScbjVTOzWZm43J1eqGF+CoiCF7PjqTbRYk/BQ2ZDUgM+fDZ/1TKTqGJ8m1YoCtIDx5D01TkOzRvyZH/4g6SFxpQmHAyQX7lK5AK7uMRc3TnAohjjKMVdkfsj+mkj67ebRUnrLjGOAJhuawB/h+ZLZ+IP5E5h3Loh7tHtwiir6Xb/YZmO1ct663gNYrlzmEEgIl6uRELGFlPJTCHrvbbDUj7CVBzEKewQTHU7WLSC1UaUkiG+lxrFTv1DpD4Zc3zqBaPN1J+/jJ8Rpem+NyebJVAeRR5yQinujVzwxFzGBMylCSSXpcau1dw+O4k48YxtRrWc1BE4394QjJ0tWXAQd7T2dCRSye+QlAlGYXL8nCgrLK5wQ8D/NCNjFqaVdpe9XgnakHW7OgQs1UVqdQPY11Cw9fZ9Av7VKlfVmE0HAdJCPt9gH1eJb/yrhytynbmuRFv1DLiBZyB3/iMFe0shqT48yo7ipwD5hHc9e0pri8qGgTLkDP/Q+8BCAnIkNFFf0tgongNXzd7zUxw1X8k+QeN3LNno4oDGbUSQS0OV1jbwDoJLGeuoC3LkJr/u1nPw== acfleury@bbd-3yxwrb3',
+      'sudo_on_bastion'    => false,
+      'create_on_compute'  => true,
+      'sudo_on_compute'    => false,
+      'create_on_pcluster' => true,
+      'sudo_on_pcluster'   => false,
+      'uid'                => 1020,
+      'shell'              => '/bin/bash',
+    },
   ]
 
   $bbp_users.each |$person| {
