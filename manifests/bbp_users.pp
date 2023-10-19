@@ -226,6 +226,17 @@ class aws_poc::bbp_users () {
       'uid'                => 1021,
       'shell'              => '/bin/bash',
     },
+    {
+      'name'               => 'zsolnai',
+      'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINjLW0isrQH7dRVtatuMBTSEP3sxuVF5icxTlCj33oU1 zsolnai@bb-c02dn496ml85.epfl.ch',
+      'sudo_on_bastion'    => false,
+      'create_on_compute'  => true,
+      'sudo_on_compute'    => false,
+      'create_on_pcluster' => true,
+      'sudo_on_pcluster'   => false,
+      'uid'                => 1022,
+      'shell'              => '/bin/bash',
+    },
   ]
 
   $bbp_users.each |$person| {
