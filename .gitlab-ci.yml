@@ -9,7 +9,24 @@ sync_environment:
     refs:
       - never    
 
-# No need to disable sync_prod because this repo doesn't use a production branch
-#sync_prod:
-#  rules:
-#    - when: never
+deploy:
+  image: bbpgitlab.epfl.ch:5050/cs/docker-images/rhel9-devel:latest
+  script:
+    - if [ -z "$AWS_CORESERVICES_PRIVATE_KEY" ]; then AWS_CORESERVICES_PRIVATE_KEY should be set; exit 1; fi
+    - rpm -Uvh https://yum.puppet.com/puppet-tools-release-el-9.noarch.rpm
+    - dnf install -y puppet-bolt openssh-clients socat
+    - echo '#!/bin/sh' >> /usr/local/bin/proxy.sh
+    - echo '/usr/bin/socat STDIO PROXY:bbpproxy.epfl.ch:$1:$2' >> /usr/local/bin/proxy.sh
+    - chmod +x /usr/local/bin/proxy.sh
+    - echo 'Host *' >> /etc/ssh/ssh_config
+    - echo '    ProxyCommand /usr/local/bin/proxy.sh %h %p' >> /etc/ssh/ssh_config
+    - echo '    StrictHostKeyChecking no' >> /etc/ssh/ssh_config
+    - ssh-agent > /tmp/agent
+    - source /tmp/agent
+    - ls -l $AWS_CORESERVICES_PRIVATE_KEY
+    - chmod 400 $AWS_CORESERVICES_PRIVATE_KEY
+    - ssh-add $AWS_CORESERVICES_PRIVATE_KEY
+    - export BOLT_PROJECT=$(pwd)
+    - bash run.sh
+  only:
+    - main
