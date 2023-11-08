@@ -237,6 +237,17 @@ class aws_poc::bbp_users () {
       'uid'                => 1022,
       'shell'              => '/bin/bash',
     },
+    {
+      'name'               => 'mfontes',
+      'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINsTlHfmRWO+Qb/QGabE/VSbd1+e4yUIvW1JBDH9fH6u mfontes@bb-c02f70cxq6lt.epfl.ch',
+      'sudo_on_bastion'    => true,
+      'create_on_compute'  => true,
+      'sudo_on_compute'    => true,
+      'create_on_pcluster' => true,
+      'sudo_on_pcluster'   => true,
+      'uid'                => 1023,
+      'shell'              => '/bin/bash',
+    },
   ]
 
   $bbp_users.each |$person| {
