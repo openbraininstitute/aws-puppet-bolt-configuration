@@ -145,7 +145,7 @@ class aws_poc::bbp_users () {
       'create_on_compute'  => true,
       'sudo_on_compute'    => false,
       'create_on_pcluster' => true,
-      'sudo_on_pcluster'   => false,
+      'sudo_on_pcluster'   => true,
       'uid'                => 1014,
       'shell'              => '/bin/bash',
     },
