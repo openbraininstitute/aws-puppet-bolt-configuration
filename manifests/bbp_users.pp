@@ -259,6 +259,17 @@ class aws_poc::bbp_users () {
       'uid'                => 1024,
       'shell'              => '/bin/bash',
     },
+    {
+      'name'               => 'tattan',
+      'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDZWgYKGfkogHjBiAP6VgAgeePiR7Z7FMrQ/WjbBYnbA dantb@hotmail.co.uk',
+      'sudo_on_bastion'    => false,
+      'create_on_compute'  => true,
+      'sudo_on_compute'    => false,
+      'create_on_pcluster' => false,
+      'sudo_on_pcluster'   => false,
+      'uid'                => 1025,
+      'shell'              => '/bin/bash',
+    },
   ]
 
   $bbp_users.each |$person| {
