@@ -20,7 +20,7 @@ class aws_poc::bbp_users () {
     {
       'name'               => 'awile',
       'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBNo9qa6OHKkstsoa2k4aPxFNZ3xXFDTofHDcxcm3NAl omar.awile@bbp_aws',
-      'sudo_on_bastion'    => false,
+      'sudo_on_bastion'    => true,
       'create_on_compute'  => true,
       'sudo_on_compute'    => true,
       'create_on_pcluster' => true,
@@ -64,7 +64,7 @@ class aws_poc::bbp_users () {
     {
       'name'               => 'kumbhar',
       'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ4yQxkIFJ/QVFsvLL1of5j0EeaWt5EBkZJJR7ooZBRm AWS HPC PoC Testing 2023',
-      'sudo_on_bastion'    => false,
+      'sudo_on_bastion'    => true,
       'create_on_compute'  => true,
       'sudo_on_compute'    => true,
       'create_on_pcluster' => true,
@@ -75,7 +75,7 @@ class aws_poc::bbp_users () {
     {
       'name'               => 'srivas',
       'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEIlqFDPBHsNjwBGJsfoQEwLrhpNS0/J0DO2irrcvoHl AWS HPC PoC Testing 2023',
-      'sudo_on_bastion'    => false,
+      'sudo_on_bastion'    => true,
       'create_on_compute'  => true,
       'sudo_on_compute'    => true,
       'create_on_pcluster' => true,

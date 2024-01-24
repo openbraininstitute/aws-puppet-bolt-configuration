@@ -1,17 +1,16 @@
 [
 <%
-$last_name = $bbp_users[-1]['name']
+$first_uid = $bbp_users[0]['uid']
 
 $bbp_users.each |$person| {
   if $person['create_on_pcluster'] {
-%>
-  {
-    "name"   : "<%= $person['name'] %>",
-    "uid"    : <%= $person['uid'] %>,
-    "shell"  : "<%= $person['shell'] %>",
-    "sudo"   : <%= $person['sudo_on_pcluster'] %>
-  }<% if $person['name'] != $last_name { %>,<% } %>
-<%
+    if $person['uid'] != $first_uid { %>,<% } %>
+    {
+      "name"   : "<%= $person['name'] %>",
+      "uid"    : <%= $person['uid'] %>,
+      "shell"  : "<%= $person['shell'] %>",
+      "sudo"   : <%= $person['sudo_on_pcluster'] %>
+    }<%
   }
 }
 %>
