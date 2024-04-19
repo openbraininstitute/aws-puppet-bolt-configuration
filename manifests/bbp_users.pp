@@ -259,6 +259,17 @@ class aws_poc::bbp_users () {
       'uid'                => 1027,
       'shell'              => '/bin/bash',
     },
+    {
+      'name'               => 'getta',
+      'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCQ4ppPwzFfDQD+i+UuI9A/5JUa64gLXYELTixlpmarLhGhJ6NTnowBL2XEtHJqjCX1XmhtvkXY4DZvpSGLCd74WMe4B7sC4Xds04Bxg4KpLcUfSuHWODp8oSz0bn1ru9PyS0IoFv+fgWdK8H1xAISzcTVO0XfFajv7A0HBLgjz1O3S2vsZPwcmB7YDp1K8A5vAjTMrHlEufGxbRIfkK9312c2mNBy7ZTLGlJvhNGW32sClETwIWZy50hw4qzmnoDhdlZPXj9tDfGSArQZLCywDiT06hWSGCoxkER/q3Y3nWebtwcP3UxPvnHw674WJWjzZ3KnUcyK/IJz1wFyWQHgiGiUZS+4voarSADdK7ZzNndiJNjEFQHo5m0L+bA5UekbAmA5kzes6qEeyRZrunDsTQTUUfKvcwwiAlgBmN/e8cMe5CX0MTvc6QEIFcdS9Zf4JZm4ug3vCxzYiyppGqbVVPCZNuhtSwq4SMJTOOist/k31SdGuNtwhYH/PbJCSg49pEaDn51hrZdI5n+ufhqESSeW9k8pj7/ZidigXUeiakW2nOLY0MN/wpEtklm4P/yPFI7u1C5GAzz/MCgxyBJXausklrEToJEEbz9NjTz0tlEE8Uhn/w3tm+nWawoUjWrKpmeGiKiJmWodNVba+1TWeeXaGCZXkzErUklVA2yPFXQ== getta@bluebrain',
+      'sudo_on_bastion'    => false,
+      'create_on_compute'  => true,
+      'sudo_on_compute'    => false,
+      'create_on_pcluster' => true,
+      'sudo_on_pcluster'   => false,
+      'uid'                => 1028,
+      'shell'              => '/bin/bash',
+    },
   ]
 
   $bbp_users.each |$person| {
