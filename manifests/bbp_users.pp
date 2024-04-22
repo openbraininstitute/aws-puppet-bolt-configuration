@@ -281,6 +281,17 @@ class aws_poc::bbp_users () {
       'uid'                => 1029,
       'shell'              => '/bin/bash',
     },
+    {
+      'name'               => 'kurban',
+      'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC9sv3BlyUCeuxBWyw8LJqw+v6oWL5wGWMqSeACJCrlN2uKIBQNblNg08nwnCFvupOBQp+tQsiPnsQFZGK051sZD5UNjRd1P4QUQoSb3LarCzH0C5lmo+MqjwQIpLyAuiEOe12nKsPebyNAh3VydWRIVYygwUb9uVGsky9xNZzS0Gx9q+Vy7wC49P7b5+Lq5VrPe8u4SfTrkKCbYuyTBbsVR66pewmn7IenCmWUO5+KAoGw/8CU2rCIZMHmgjxvigk5mN5m6Co0sb4K+bmVZK/fPX2mqOZW0bVWKWuK6Mlzw+1w4l3Jy3jEVNeG+t7ZSLMEs5SYlt/B7A/ahPBwBIhh9hbJ/qU2M93ez9nED4RdDWOuveCUEMB75U1Wh/rmS70X0vkS30x2UdUWZpjXTL6z7BgNo24Io/UQIm93p2FCnidR3TR75so7sh+u8TxnU/WzSPVPDtFGLZClbrXb5V3SyihJepKcXAPM96zoBoACeW1Ly72RsHL2UI35/NYKyThc4yBAyLCNjSVU6G5gRz5BfyIhs5Vhlxuf08NVKnmqAaDfo/4Dd2OfijkVored9Gw9O6SnKjy1shwP++xvqBrTw2oLFWjAITf4IPOqydq0upFkgB7T7C+9aKV4bcJTHMxG268PFKPB17fT9pnlxuQQiRkD68vy5fULmEO32+Xi+Q== kerem.kurban@epfl.ch',
+      'sudo_on_bastion'    => false,
+      'create_on_compute'  => true,
+      'sudo_on_compute'    => false,
+      'create_on_pcluster' => true,
+      'sudo_on_pcluster'   => false,
+      'uid'                => 1030,
+      'shell'              => '/bin/bash',
+    }
   ]
 
   $bbp_users.each |$person| {
