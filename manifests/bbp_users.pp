@@ -291,6 +291,17 @@ class aws_poc::bbp_users () {
       'sudo_on_pcluster'   => false,
       'uid'                => 1030,
       'shell'              => '/bin/bash',
+    },
+    {
+      'name'               => 'bilal',
+      'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/2LjrMo7vBtjWx5lqCry4CGHa26MjcruWYTwnOf8etCrJX/M1cejObRO2lVAajRaFmdAyLXrmZET3lzaAVKRkzIzmZMrDf3XsMp/iDvyl20UtZVf6ieCdwXn1Hxdw5D0bQsAJkdkH2JqAPGRcAbRy7E9zXlxzpT4zAlm6Jy/ILLyECEWckcAg1ON0GPJjXSI9Ss+Ol7LtEt3n/qi4hGFHYLyGciiB3lnHjS/lZNpsqKOGCh2pannyhLypRiz6WKrhFq2mpezP9Gke1FU9pqxfrGuGyEEUBg+NcRfYP91fkcscpjVTl8wePNpOevHf9q7WN8meyDJ39Qes5gWMihFWlbA2dGd6Y3gEQJB7YBIeR5i+Qg9FXVittls5rcuVS5MfPoET6eX/QPoH4iMMQO56VVhF9n6h9tCicNWl+pBzRU0UvY/1aAwJUDuBeyPwjY27hxuOrUjnKLDq4ojUw9K7Ucyq63ObIXvyJ42MXCuNOqvU+4neHH73JmbQ/jzVBFFfPc+WJlHHcT8sSUaUWdZF+7TOSvUcL08ft1gHau+yec8aSIAFtCxPxDqKxFYDTJYNESOSGLyRhCJzCN3otTN2WjIfIDgRf+ZGlXKM7E2HAjs2bnr2i2eB9mtES57jnhjKBMLG+cY3728gSNRfV1tgvi3OD6eZ3HckZ+4b8qVS1Q== meddah@bb-pggwpwnhqj.epfl.ch',
+      'sudo_on_bastion'    => false,
+      'create_on_compute'  => true,
+      'sudo_on_compute'    => false,
+      'create_on_pcluster' => true,
+      'sudo_on_pcluster'   => false,
+      'uid'                => 1031,
+      'shell'              => '/bin/bash',
     }
   ]
 
