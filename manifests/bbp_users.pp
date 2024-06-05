@@ -302,6 +302,17 @@ class aws_poc::bbp_users () {
       'sudo_on_pcluster'   => false,
       'uid'                => 1031,
       'shell'              => '/bin/bash',
+    },
+    {
+      'name'               => 'dumas',
+      'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCVspJxg6UZo+yciPfDVRxXfyhGu+9MomFBJttw7ZCOlzBaH7W8mH+1uBa8CqlZ7d22XPdGuGo1weykcoeKbdOPZzUjsBjMBLH4WXWXZnbJbaetl96bH0sPHgB3BCZkPmKLNGTtV6hsKIBgMF8jMQdYp9urQ+juzOeNhRS6kzlH9VMLyi/GCpSsZD6MhSym6nRyTHxGYcQmgXolt4hc8C9Md5a+JhsCBqOluUt03oekZe+4osODnbB16pTCY2SqKpO+Ntd6NRNMCZwp+4GoYQDUL5ytcq0HZYGoVZTIXR336yMFIMleCeRwPz7DwcKRElD9h6+mA1p9T36uBWWXeDStgvItGhyAZ6MD2vNjTh1jnc9rMwPQ03xtia9AwDiyqan0PRsVgWs9M6xzzIc6PTPVv1Ju6lsGjcebhxFmV3jYS3buzFAZNBrp+q+1YZMJ72i5bKWpK1ILIw28Jck+9pHBtfty6GGuIa+/hHnTFmW43bqvv5s2nF66dQweT0Snw/TdugGGFfmlFfaPYwON3RPjBidcUNqzFBReixt5boRo9EwU1Hj6fTrNfGvKLVAkpRJCsPzTUgv/Jp2rbXH6PPa41obhXrDCXHg3MlWD+KLYixOSYAD3cM38Ilaf/uOXNAddMdb8pA8hvhZEMuRt8tG0licrT0UrWsg7mGYN6DoL+Q== simon.dumas@protonmail.com',
+      'sudo_on_bastion'    => false,
+      'create_on_compute'  => true,
+      'sudo_on_compute'    => false,
+      'create_on_pcluster' => true,
+      'sudo_on_pcluster'   => true,
+      'uid'                => 1032,
+      'shell'              => '/bin/bash',
     }
   ]
 
