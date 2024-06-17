@@ -9,6 +9,7 @@ plan aws_poc () {
     $node_type = 'bastion'
     include aws_poc::bastion_hosts_packages
     include aws_poc::filesystem_blazegraph_efs
+    include aws_poc::filesystem_blazegraph_main_efs
     include aws_poc::filesystem_compute_efs
     include aws_poc::filesystem_nexus_app_efs
     include aws_poc::filesystem_nexus_delta_efs
