@@ -130,7 +130,7 @@ class aws_poc::bbp_users () {
     {
       'name'               => 'grabinsk',
       'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGKRXj2BuiD0EU4f3UhQxsWd5VbENRmkcZZlYb/j/EoK',
-      'sudo_on_bastion'    => false,
+      'sudo_on_bastion'    => true,
       'create_on_compute'  => true,
       'sudo_on_compute'    => false,
       'create_on_pcluster' => true,
