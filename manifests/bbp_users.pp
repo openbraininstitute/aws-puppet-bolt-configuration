@@ -313,6 +313,17 @@ class aws_poc::bbp_users () {
       'sudo_on_pcluster'   => true,
       'uid'                => 1032,
       'shell'              => '/bin/bash',
+    },
+    {
+      'name'               => 'kbvw',
+      'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDXQ8LK8gTuo9nKzJY4k/8cCLIg5L+8Z4vndoTV823q8FUkF0vsIFVw19E8a7RVMFxMK4VVKMcF/+ZSKreWgg6Nu24vQulTlkIO2Vu/CxgDJ7WcRBOQlAH1Gt87Yd23F6OgUFN7X98i8zCj4n4XrtJ8hTrKfQeshjCL6xRPlVh8u5HcgSxc6ifWWDHvNux3hbh+CjOgVQ6cfrLJwO0YpznkldCSkX8UgmdhjBk0XG6fBkADKHFm3aXRy7btT5SJt4swHu27mW/w+m+rogc1NDrYTtmiLSZdi/jspjigPzUNGKFI5uf5nT1gXtw5561O8s/0lkoZ8VLbgY9Zhi/V2I2MWo4RaJMJuT1bXgeWQhb9bxGWbaMt843J4cJb1hSCMYmWd4G2QC4oSM1UF9CqIpunIQ/ytC44Jb51w4jWSO1GJnIzJYyYJwXinQTvtmT6dqS3k50eeblFcVfwdyo7BxPO485OKZzJV+XGlHga1fn1DFxdpQ6HzHB52y1oDg6hFzU= kbvw@hp',
+      'sudo_on_bastion'    => false,
+      'create_on_compute'  => true,
+      'sudo_on_compute'    => false,
+      'create_on_pcluster' => true,
+      'sudo_on_pcluster'   => true,
+      'uid'                => 1033,
+      'shell'              => '/bin/bash',
     }
   ]
 
