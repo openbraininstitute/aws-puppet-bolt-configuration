@@ -324,6 +324,17 @@ class aws_poc::bbp_users () {
       'sudo_on_pcluster'   => true,
       'uid'                => 1033,
       'shell'              => '/bin/bash',
+    },
+    {
+      'name'               => 'kerrien',
+      'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQChgcETI7eBNlo/3EtT1IT8/DVVdwShUrvYsqN6315Xd3hO6Vt4A4ECTN7gJ398m/SLl+yvQ8DzvBWYq4uI65H4LQhCB1/c4EPFUrpHanxLjsKP40LodYVaVvSTXo3FW08FmpRX0iT5/yNpQYMbMD+eLv3rNqi10TLpEJP50OgzGMai0wvjCn+4VfziZQiwXQD9Iea5ex/fm8FqbRoZrI4YJPpXuV2GCB6+HuKlx0wh1wxfVcuwP4trNhVYgMMkAYgyVAiu8sy3P22cwt0gSS7vePpyXFmrEveYUbVhnw29bA2kcNW2H9qGa8W0QRKHuxn1hHl1D5PnMnF5OCvKiJjHoMfUyE3V0SCT/qxrjh3lEYKioo2zIyHNqppaKsrvP6j2YHu4HHi+FzKBXRFfp25ifhq0NUeauirELy2VhbKUyFYzg4x7xDN8PUSjqhIfxYthpc5aQVSId6BgYxuwqd5nvBndDdXVRsUE1kT884Z+R7HsqSEExGiNECCbX6JRpP6w+xyHzOk9h1GpLs2OJGUoYMdO3M00+NYeV3mNjo7aI8lT9OtCgTDp/dHHzg+SVG1ce4fFzlQsaLIGUXD8+5URxQcI28m84toaQPyAVjP4/EOqo1ClgJvy06orQCrSoD9abOGNl1XhUn987RnDJeL3Skx3XNQmO7AQATGVw6SnSQ== kerrien@bb-c02z903vl414.epfl.ch',
+      'sudo_on_bastion'    => false,
+      'create_on_compute'  => true,
+      'sudo_on_compute'    => false,
+      'create_on_pcluster' => true,
+      'sudo_on_pcluster'   => false,
+      'uid'                => 1034,
+      'shell'              => '/bin/bash',
     }
   ]
 
