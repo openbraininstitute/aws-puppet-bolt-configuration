@@ -8,10 +8,8 @@ plan aws_poc () {
   apply('ssh_bastion_hosts') {
     $node_type = 'bastion'
     include aws_poc::bastion_hosts_packages
-    include aws_poc::filesystem_blazegraph_efs
     include aws_poc::filesystem_blazegraph_main_efs
     include aws_poc::filesystem_compute_efs
-    include aws_poc::filesystem_nexus_app_efs
     include aws_poc::filesystem_nexus_delta_efs
     include aws_poc::bbp_users
     include aws_poc::selinux
