@@ -6,7 +6,7 @@ echo "❗ssh-agent with AWS coreservices key from pass needed❗"
 
 # Install nc, so that it's possible to use the ssh bastion host to forward ssh connections
 # to other hosts, such as the sbo-poc-compute01 HPC test VM.
-ssh ec2-user@ssh.shapes-registry.org sudo yum install -y nmap-ncat
+ssh ec2-user@ssh.shapes-registry.org sudo yum install -y nmap-ncat dnf-automatic
 
 # Puppet bolt always first attempts to install the puppet agent on a node to gather facts
 # before it attempts to run any manifests. Normally it does this automatically, but this
@@ -17,6 +17,12 @@ ssh ec2-user@ssh.shapes-registry.org sudo yum install -y nmap-ncat
 # the head node: it's done by a python script made by Omar.
 #ssh ec2-user@sbo-poc-pcluster.shapes-registry.org sudo rpm -Uvh https://yum.puppet.com/puppet7-release-el-7.noarch.rpm
 #ssh ec2-user@sbo-poc-pcluster.shapes-registry.org sudo yum install puppet-agent -y
+
+# configure dnf-automatic for automatic security upgrades
+sudo sed -c -i "s/\(upgrade_type *= *\).*/\1security/" /etc/dnf/automatic.conf
+sudo sed -c -i "s/\(apply_updates *= *\).*/\1yes/" /etc/dnf/automatic.conf
+sudo sed -c -i "s/\(download_updates *= *\).*/\1yes/" /etc/dnf/automatic.conf
+sudo systemctl enable dnf-automatic.timer && sudo systemctl start dnf-automatic.timer
 
 bolt module install
 bolt plan run aws_poc --native-ssh -v
