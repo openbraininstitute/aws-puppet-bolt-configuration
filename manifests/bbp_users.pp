@@ -302,6 +302,17 @@ class aws_poc::bbp_users () {
       'sudo_on_pcluster'   => false,
       'uid'                => 1034,
       'shell'              => '/bin/bash',
+    },
+    {
+      'name'               => 'bergsma',
+      'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEtJ5W8bXdNWUtgxXTT2F5HsnMquuPIpnmsEPzrHgTEY aws',
+      'sudo_on_bastion'    => false,
+      'create_on_compute'  => true,
+      'sudo_on_compute'    => false,
+      'create_on_pcluster' => false,
+      'sudo_on_pcluster'   => false,
+      'uid'                => 1035,
+      'shell'              => '/bin/bash',
     }
   ]
 
