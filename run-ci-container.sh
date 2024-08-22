@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# This is executed within the GitLab CI on a container.
+
 echo "❗ssh-agent with AWS coreservices key from pass needed❗"
 # to add the key:
 # pass systems/services/external/aws/ssh/aws_coreservices_password
@@ -18,11 +21,8 @@ ssh ec2-user@ssh.shapes-registry.org sudo yum install -y nmap-ncat dnf-automatic
 #ssh ec2-user@sbo-poc-pcluster.shapes-registry.org sudo rpm -Uvh https://yum.puppet.com/puppet7-release-el-7.noarch.rpm
 #ssh ec2-user@sbo-poc-pcluster.shapes-registry.org sudo yum install puppet-agent -y
 
-# configure dnf-automatic for automatic security upgrades
-sudo sed -c -i "s/\(upgrade_type *= *\).*/\1security/" /etc/dnf/automatic.conf
-sudo sed -c -i "s/\(apply_updates *= *\).*/\1yes/" /etc/dnf/automatic.conf
-sudo sed -c -i "s/\(download_updates *= *\).*/\1yes/" /etc/dnf/automatic.conf
-sudo systemctl enable dnf-automatic.timer && sudo systemctl start dnf-automatic.timer
+scp run-bastion-host.sh ec2-user@ss.shapes-registry.org:/tmp/
+ssh ec2-user@ssh.shapes-registry.org bash /tmp/run-bastion-host.sh
 
 bolt module install
 bolt plan run aws_poc --native-ssh -v

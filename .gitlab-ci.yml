@@ -27,6 +27,6 @@ deploy:
     - chmod 400 $AWS_CORESERVICES_PRIVATE_KEY
     - ssh-add $AWS_CORESERVICES_PRIVATE_KEY
     - export BOLT_PROJECT=$(pwd)
-    - bash run.sh
+    - bash run-ci-container.sh
   only:
     - main
