@@ -21,7 +21,7 @@ ssh ec2-user@ssh.shapes-registry.org sudo yum install -y nmap-ncat dnf-automatic
 #ssh ec2-user@sbo-poc-pcluster.shapes-registry.org sudo rpm -Uvh https://yum.puppet.com/puppet7-release-el-7.noarch.rpm
 #ssh ec2-user@sbo-poc-pcluster.shapes-registry.org sudo yum install puppet-agent -y
 
-scp run-bastion-host.sh ec2-user@ss.shapes-registry.org:/tmp/
+scp run-bastion-host.sh ec2-user@ssh.shapes-registry.org:/tmp/
 ssh ec2-user@ssh.shapes-registry.org bash /tmp/run-bastion-host.sh
 
 bolt module install
