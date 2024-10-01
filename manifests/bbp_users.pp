@@ -183,17 +183,6 @@ class aws_poc::bbp_users () {
       'shell'              => '/bin/bash',
     },
     {
-      'name'               => 'ngutic',
-      'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDP26mmlj5z3UxcX8vxwQP3ouMM/+8amoiqVs0uxIk7fVnFUulDWQMwXj7UNSBWTzrdV12H5Pa3DnX5HXDWjNytUWASLqu9HDzcikxtRrIs6rUQqvgA4Sa/xdiZeDagJrPOVvMLITmNHAb+VNVZRyHZ710scXyOZ0KVMnkNKqmj0lESzrUphzDf9x2N6DCGqx2g4tksN0dzoragQg7VmsaIQtk9RxNCgDPMZG1F9Jtw4ahyH1swQW+WfOawCKxRuKQjbYMIjm/HGCHuxAIR7JVhMONCWtGRkjIc8aHZ+97qOD+yvqMVCpD8kopTh6Oj4esjGUyyNyotNNNJXvOCvou5p6StKaJePd+trc/5xjg6i7gf7oAi3hBoLT9Wh0rK6Jux3RFkP7bhsoVFkg9cS3nhkFZ6VUpkj5E3MXcpKunh8j0P8a7mv+jLBznnTjZfDV6qfuBcdqfqZon2SvKC6M3RjW6OYoaCGNaQW3/i14UyEW8ghoWf/9BWSqyiNcTIy60=',
-      'sudo_on_bastion'    => true,
-      'create_on_compute'  => true,
-      'sudo_on_compute'    => true,
-      'create_on_pcluster' => true,
-      'sudo_on_pcluster'   => true,
-      'uid'                => 1024,
-      'shell'              => '/bin/bash',
-    },
-    {
       'name'               => 'leite',
       'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDJufAT0uf8yEFyLUYoGZQWyliYP9G4FPDG9EC36YbG4KNVAYQ8sLtJEsdAzTTv+wB9I4A5n1OaV+gNBDccg3TssWMS/qUhK2CJ4uOKsmPbtvdg9bIMjsSe9tG6Xvs6roOW49lSFOG8WAeG/D82x3Eo+wm+yOcjT1rf4KkyZ2HqqJGqOxbJlnao4eqgBAaow1Wx3N70YWmv4Su+y3+avPDFtMZFHfOrYNC6FUcWvqmG0YRK+og6Wsb5WrvC1uLQAJTMTRqUMX7CsHtNagVQElNAS9Lha8Czp18QV40GPrxJZxpAidF6HVd8Z2gtwbGO42K7Xmlfvmg4tn3fmEUf1RexLak6uEN239YnsZJ50irbs9PeGf/1aqM5euQw7EWe/m+oEOnWZuFH/qTq/dn5Jnlp4HIQl4WIbKvTJXfNaU8iKiZ42mIv7KxN6DupqaU0HOlro2OLeSV+KQOQzlXIqEqGYCzs5zDiSIDUBJVWeEPdj71FI25yXisekwuSzXBk9wrdQ0hFjheh+B/IbMgWZwwAWJYdMulCv/vErG0gBKVCgw3yjEMZYJpjaeTNVr1sV+djvPXlDPhLTancJKYyCi1SSjXjvVeoLAJ50alsfkuZIt85YVGpXIFwe+4rND8y97rD3nCL1ulLYb8inLIfqTBSEbYTBL1LsRfct0LRBL6qdw== Leite@BBP_2020',
       'sudo_on_bastion'    => false,
