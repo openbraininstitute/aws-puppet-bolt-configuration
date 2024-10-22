@@ -128,17 +128,6 @@ class aws_poc::bbp_users () {
       'shell'              => '/bin/bash',
     },
     {
-      'name'               => 'agarner',
-      'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDqOoT/0acCCgQJpc2GUpRQszbjCu3T/wTF+u75sYHgBVLcI5FSE1dlepZEUAdkJLthDrAX+QYac+3bByRZpgJrMeIU8xQjX++udaVvCprBUKagSlUN3oxGl4JSWRMvybzEYxV9QU7xiPJ4XYpXzkTpIuQC+TKylNZtKx9ixrJ2NHD1YGcwAL43B7jLC2lWSsS62m0oMQfZPHxCYGJq0xTtAjq9N9e9B5I2o7Ig1bAGVjRKSK8LdP5JPGoCILv2Wa6fEhFASOCcNbiJg+hXR/YxzDn7IdjJU0CENorPuvZk+7qWDZ07LA9lte/ESXv9BPlb5KkDKgSZ8Cvb2qWxh84/OYqQm251zqS5/ppjUs75q1MrqgFxbf+esRvR59b2B5/nFNV5UPaEBOYwYzLskfDZQ9/xA+v5g0DBR89HAqh2WyhBjUuEg7aS23/Kqj88P6HJTO/ODMpHpGtMiqFzQyqQHlrj+lI/MKdxgPmhRULcwxJ2vlkY24rEjkA6oxq9CqM= agarner@bbd-1w2mlh3',
-      'sudo_on_bastion'    => true,
-      'create_on_compute'  => true,
-      'sudo_on_compute'    => true,
-      'create_on_pcluster' => true,
-      'sudo_on_pcluster'   => true,
-      'uid'                => 1017,
-      'shell'              => '/bin/bash',
-    },
-    {
       'name'               => 'danielfr',
       'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCmYehUxUHM6RkLCHqvV4tsd7n2RspH3xATM7TIH6IF5TsiF4nBKk//FsdB6U5XJ4KMQTQpWTswRFwVyOgfSCYaGY9RGRZV+54ufqXkXwrvnF3p1CkMNvimFe4zFAsnxs5Uc3PXN3QKtsNrVx4Xt9KyEj5LyYuMKoBbQkgVB8hsvOa+jJQV7HtBqioECaXTz6NOkjDYkzsLc1lU8ldk4YMrbX846c41lVdTssVNlL8tnRH+onUuGYe0JZecm2EU/72N1gJXbT5FPBIfmLLAX8onlUtarFcQRa2CyuPd0pIv5GDcBmD2Z0otKH3eZXPBW5bwB3/BLHSiSFcyMmjAiotBkp0AgPBXzaVbsXUSnH92VvfUaCnM754Z+En9uq+7IxgBgtlBg3o75RuVuAuMB7A5zPXGNc3HUs0y9xvzjhMsCDHveUws35qGJoFBR+v3sdfTSfdl/fu2YYprVxSBVtuq8unTO5MNUShVkOaq7M1Ed7yrsFGfC7vHzpydQeD5L3FKSuRr+om003ZlCprNR3CsKKTQvaDdIk8Ur9PQgOw2rxLWhPN8wyagugOSdPhZ4c0ClMOXZe72iQPIEhpMK5dMoNnTLVXHdG8ZY5+FMgctqF/e6pdZn21wGyd629iH/r7WGNsx7eqbajhkF9OWQpP5Oar2wT0/t8KbmPo6nSuvWQ== danielfr@epfl',
       'sudo_on_bastion'    => true,
