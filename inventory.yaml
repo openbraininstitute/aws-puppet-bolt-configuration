@@ -1,7 +1,7 @@
 groups:
 - name: ssh_bastion_hosts
   targets:
-    - uri: ssh.shapes-registry.org
+    - uri: ssh.openbluebrain.com
       name: ssh_bastion_a
       config:
         ssh:
@@ -10,46 +10,6 @@ groups:
           run-as-command:
             - sudo
             - "-nkSEu"
-## At the moment, parallelcluster is configured
-## with the pcluster scripts in some s3 bucket.
-#- name: pcluster_host
-#  targets:
-#    - uri: sbo-poc-pcluster.shapes-registry.org
-#      name: pcluster
-#      config:
-#        ssh:
-#          user: ec2-user
-#          run-as: root
-#          run-as-command:
-#            - sudo
-#            - "-nkSEu"
-#      facts:
-#        operatingsystem: CentOS
-#        osfamily: RedHat
-#      features:
-#        - puppet-agent
-# Also the first test VM was deleted.
-#- name: hpc_compute_vms
-#  targets:
-#    - uri: sbo-poc-compute1.shapes-registry.org
-#      name: compute1
-#      config:
-#        ssh:
-#          user: ubuntu
-#          run-as: root
-#          run-as-command:
-#            - sudo
-#            - "-nkSEu"
-## The second test VM was deleted.
-#    - uri: sbo-poc-compute2.shapes-registry.org
-#      name: compute2
-#      config:
-#        ssh:
-#          user: ubuntu
-#          run-as: root
-#          run-as-command:
-#            - sudo
-#            - "-nkSEu"
   config:
     transport: ssh
     ssh:
@@ -58,7 +18,5 @@ groups:
       run-as-command:
         - sudo
         - "-nkSEu"
-      # if not set: use ssh agent
-      #private-key:  /Users/verachte/.ssh/aws_coreservices_private_key
       host-key-check: false
       load-config: false
