@@ -1,2 +1,2 @@
-mod 'puppetlabs-stdlib', '8.6.0'
-mod 'puppet-selinux', '3.4.1'
+mod 'puppetlabs-stdlib', '9.7.0'
+mod 'puppet-selinux', '5.0.0'
