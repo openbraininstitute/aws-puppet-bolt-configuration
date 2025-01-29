@@ -1,4 +1,4 @@
-class aws_poc::filesystem_compute_efs () {
+class aws::filesystem_compute_efs () {
   file { '/sbo':
     ensure => 'directory',
     owner  => 'root',

@@ -5,7 +5,7 @@ and https://www.puppet.com/docs/bolt/latest/tig_stack.html
 
 ```
 bolt module install
-bolt plan run aws_poc --native-ssh -v
+bolt plan run aws --native-ssh -v
 ```
 
 # Funding and Acknowledgement
