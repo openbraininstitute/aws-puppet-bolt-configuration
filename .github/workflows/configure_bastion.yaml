@@ -1,0 +1,27 @@
+name: Configure Bastion Host
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [ closed ]
+    branches:
+      - main
+  push:
+    branches:
+      - '*'
+
+jobs:
+  bash-script:
+    runs-on: ubuntu-latest
+    name: Configure Bastion Host
+    env:
+      AWS_CORESERVICES_PRIVATE_KEY: ${{ secrets.AWS_CORESERVICES_PRIVATE_KEY }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Make script executable
+        run: chmod +x .github/scripts/run-gh-workflow.sh
+
+      - name: Run the script
+        run: .github/scripts/run-gh-workflow.sh
