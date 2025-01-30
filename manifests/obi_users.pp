@@ -50,7 +50,7 @@ class aws::obi_users () {
     },
     {
       'name'               => 'getta',
-      'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHxrb0uKrJ0XqWA7lFLSNjk9OpfuB34q1wucUrhVOZAD pavlo.getta@openbraininstitute.org'
+      'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHxrb0uKrJ0XqWA7lFLSNjk9OpfuB34q1wucUrhVOZAD pavlo.getta@openbraininstitute.org',
       'sudo_on_bastion'    => false,
       'uid'                => 1028,
     },
