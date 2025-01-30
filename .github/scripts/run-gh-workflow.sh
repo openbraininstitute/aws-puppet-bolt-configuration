@@ -21,10 +21,13 @@ export BOLT_PROJECT=$(pwd)
 
 pwd
 
-# copy script to bastion
-scp -o StrictHostKeyChecking=no .github/scripts/run-bastion-host.sh ec2-user@ssh.openbluebrain.com:/tmp/
-# exec script
-ssh -o StrictHostKeyChecking=no ec2-user@ssh.openbluebrain.com bash /tmp/run-bastion-host.sh
+BASTION_NODES=("ssh.openbluebrain.com" "ssh.staging.openbluebrain.com")
+for NODE in "${BASTION_NODES[@]}"; do
+  # copy script to bastion
+  scp -o StrictHostKeyChecking=no .github/scripts/run-bastion-host.sh ec2-user@$NODE:/tmp/
+  # exec script
+  ssh -o StrictHostKeyChecking=no ec2-user@$NODE bash /tmp/run-bastion-host.sh
+done
 
 bolt module install
 bolt plan run aws --native-ssh -v
