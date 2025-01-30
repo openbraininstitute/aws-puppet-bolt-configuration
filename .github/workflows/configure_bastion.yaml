@@ -8,11 +8,11 @@ on:
       - main
   push:
     branches:
-      - '*'
+      - main
 
 jobs:
   bash-script:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04 # check if puppet-bolt is available for newer releases before upgrading
     name: Configure Bastion Host
     env:
       AWS_CORESERVICES_PRIVATE_KEY: ${{ secrets.AWS_CORESERVICES_PRIVATE_KEY }}
