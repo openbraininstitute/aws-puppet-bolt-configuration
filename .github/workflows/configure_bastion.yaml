@@ -6,9 +6,6 @@ on:
     types: [ closed ]
     branches:
       - main
-  push:
-    branches:
-      - main
 
 jobs:
   bash-script:
