@@ -21,7 +21,7 @@ export BOLT_PROJECT=$(pwd)
 
 pwd
 
-BASTION_NODES=("ssh.openbluebrain.com" "ssh.staging.openbluebrain.com")
+BASTION_NODES=("ssh.openbrainplatform.org" "ssh.staging.openbrainplatform.org")
 for NODE in "${BASTION_NODES[@]}"; do
   # copy script to bastion
   scp -o StrictHostKeyChecking=no .github/scripts/run-bastion-host.sh ec2-user@$NODE:/tmp/
