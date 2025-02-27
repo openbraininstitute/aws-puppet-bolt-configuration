@@ -2,14 +2,14 @@ version: 2
 groups:
   - name: production
     targets:
-    - ssh.openbluebrain.com
+    - ssh.openbrainplatform.org
     vars:
       # TODO: these EFS (prod & staging) were created created manually
       # check if we should use 'sbo-poc-compute-efs' or simply create a new one
       efs_dns_name: 'fs-0c2a2f3ad1b1beeca.efs.us-east-1.amazonaws.com:/'
   - name: staging
     targets:
-    - ssh.staging.openbluebrain.com
+    - ssh.staging.openbrainplatform.org
     vars:
       efs_dns_name: 'fs-04a3c0c86b3050d4a.efs.us-east-1.amazonaws.com:/'
 config:
