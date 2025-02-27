@@ -55,12 +55,6 @@ class aws::obi_users () {
       'uid'                => 1028,
     },
     {
-      'name'               => 'saxena',
-      'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC9xeUD/FhL9egEXZdY7RL67AIYu7O7Lv9LM5SHUh7zJMgYzj4e/gV2maH7HiKXUcyRiYPCj0wFdEsoit1bv4BX48haURKeyt3ITZJ3nQcg8bbtLaTxhGM4YJePuhPTy09J49rifAiWxPqMmydepntBoXrUyjal60UBYHfrsh4iL9xk2isfDEjIHViO+8vY2sToy8VfMjqk3m6gD/YwMV+8LZXHsiOfpoqsz3qvN6vJL1TBW92MIZDZBpaCpvUS9ioaUCniSKoAspxdzpF9J0oHdHO5YNI2Bey021yupTuPiVjM7L7uEQ3KUxgx0LQ4HyFIzCS0G7seIUWmHEEgW7SNiDN2zXtB7Y4Y7fXByoHwm4vdDrFQVvpwr950L4fCZVOoSVnlSt4DK8OI4O+Oh4tOwlwaLE9JQw4eIcViN69rtzE2eWDLq2W6LtHBY8205Oa0Q0RY16NCH39ACprzKdS7qfXJC1aK7UddW85ijoQ7fQzqv/y8B7CgNjcX/EkuhZ7VXC+Pqtg88Jgq0Gvc7DLm/ah1vnIDdRHogOWs7qsNwXYdpVFUpZ/7yovB3VNcVD5JY6oBDI/yLivY47kEY41+MUF9+sINIfEap8CZzyR9E99cdnfFs6N8onq2YDJamEHRMFxiIAYISbkEmiyHc2gdknoR1C2bGYmdGRxihmZwLQ== dinikasaxenas@gmail.com',
-      'sudo_on_bastion'    => false,
-      'uid'                => 1029,
-    },
-    {
       'name'               => 'bilal',
       'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/2LjrMo7vBtjWx5lqCry4CGHa26MjcruWYTwnOf8etCrJX/M1cejObRO2lVAajRaFmdAyLXrmZET3lzaAVKRkzIzmZMrDf3XsMp/iDvyl20UtZVf6ieCdwXn1Hxdw5D0bQsAJkdkH2JqAPGRcAbRy7E9zXlxzpT4zAlm6Jy/ILLyECEWckcAg1ON0GPJjXSI9Ss+Ol7LtEt3n/qi4hGFHYLyGciiB3lnHjS/lZNpsqKOGCh2pannyhLypRiz6WKrhFq2mpezP9Gke1FU9pqxfrGuGyEEUBg+NcRfYP91fkcscpjVTl8wePNpOevHf9q7WN8meyDJ39Qes5gWMihFWlbA2dGd6Y3gEQJB7YBIeR5i+Qg9FXVittls5rcuVS5MfPoET6eX/QPoH4iMMQO56VVhF9n6h9tCicNWl+pBzRU0UvY/1aAwJUDuBeyPwjY27hxuOrUjnKLDq4ojUw9K7Ucyq63ObIXvyJ42MXCuNOqvU+4neHH73JmbQ/jzVBFFfPc+WJlHHcT8sSUaUWdZF+7TOSvUcL08ft1gHau+yec8aSIAFtCxPxDqKxFYDTJYNESOSGLyRhCJzCN3otTN2WjIfIDgRf+ZGlXKM7E2HAjs2bnr2i2eB9mtES57jnhjKBMLG+cY3728gSNRfV1tgvi3OD6eZ3HckZ+4b8qVS1Q== meddah@bb-pggwpwnhqj.epfl.ch',
       'sudo_on_bastion'    => false,
