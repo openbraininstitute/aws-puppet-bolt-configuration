@@ -13,6 +13,12 @@ class aws::obi_users () {
       'uid'                => 1002,
     },
     {
+      'name'               => 'courcol',
+      'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC7ODbkDNLlwCDdhQLQLR7Gz6wVj3k+gU8Hzz6MMHxauwA/lW35KnWjxFplSFgwNmwc1SCfxbwQQiiN3c4EIO9FOYtsjefa9jaeTwUIiOhI48AAf6VXPNVOpugi+zH+emdMEHyIeCEG+aV96gEcugXkAdkOz6U6kBoujqTNmh5vlCFBhzEJ2xOCynCdlc0iqpoASVjNcS6VDNi6V4/TLVvE7rg/py/nnzDM0/AfQLMUn+noTDIfQrp1/B8GgedxCuYveOcS+cPvwJD2YkV8HYfBfqo8R/cDl4qYt3+1aY6cIDDVhDUniaG55fPZqNHm6G2RS5rRcpnT20pja9uPLIkxZm6io3rbQNFM1N3ATROtea9olpZcmgpSbcRvoh+Jua5to1YKDYOqTX61jCobVqSc0tYeV1k02wz3Yc86asOtglEukw9KJVaCI4sTDi7/1L9pS2dDU3WekXvf3idfI8uk25qbG3iL60bAC2HIVskeGxe0i76BqhtAlUSVk8tjwzKDQHMIJRWDH4UoR1MYnmJmBlfBixPJ3563u+K+Gqtj7Tyvvb0r5jbmpYMn6vvq/HhesieTy0aEeRp6qyqVMrHuVhIzr6wLKPLqdi4/EkuPGQgSAziHfEb0ZAXU+d0hryTR8AWiABQJymi5MKKZMRwJYIm0HYuixock/9FEeqeUew== courcol@courcol.ch',
+      'sudo_on_bastion'    => false,
+      'uid'                => 1003,
+    },
+    {
       'name'               => 'krepl',
       'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+TXTyvSJMLC6pI3d8KUaZD0vYv6l5WzHP/h2QdH9QbFbsR5VEfhbvd81m0A8ICXkXXtrvv/YevqM38ZaZcY9c9ZPmFd7Z2osFqRMmzZxjUgGY0RJocQwbg9evsbgMblnkdgorGZSkMbf9YDIR3GeC5wyNR/O4fNpsff+dt0cNPwfyi4ubFlnrQRGFP47T7vVbeR4gB9uyES/QavU5aFoTK1s48IiEaiLu4f+o/hlh9NywxuDlONA7HJLnA2TYu2fMc4URhli3Exit2g3nK9PGNZyOhPmdMZYmJvj5glGMOaYFI8GijWlQhNHGmBwgnN4U88IAb8j/w1nZIgfLI9BHMYDFLbLKA007KConv662xwAZVknOIs7WmII4Wv89kKYcTbKY6xPAC8e/igHZyJWorIJhzfTbxl5vLXUYNlhMqD60U0PMvlkjq2di4Hj531wTFOxtOSanC25Jv5eq8nHe+GYw4bjkcmBh06AsNOWKCWbVICPRBD03qG6wE0Z2qRE= krepl@bb-c02g10cdq6lw.epfl.ch',
       'sudo_on_bastion'    => false,
