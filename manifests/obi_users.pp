@@ -67,6 +67,12 @@ class aws::obi_users () {
       'uid'                => 1031,
     },
     {
+      'name'               => 'khazen',
+      'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHLQLFpw99J4HtO+5V33q0sEr0IA4uTOvTTVdrUCPfPG georges.khazen@gmail.com',
+      'sudo_on_bastion'    => false,
+      'uid'                => 1032,
+    },
+    {
       'name'               => 'bergsma',
       'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEtJ5W8bXdNWUtgxXTT2F5HsnMquuPIpnmsEPzrHgTEY aws',
       'sudo_on_bastion'    => false,
