@@ -74,7 +74,7 @@ class aws::obi_users () {
     },
     {
       'name'               => 'bergsma',
-      'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEtJ5W8bXdNWUtgxXTT2F5HsnMquuPIpnmsEPzrHgTEY aws',
+      'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK1R/kDtZfS+8VC6+s2ZZxSypYS9Tlv6yGhGJaok64q0 boris.bergsma@openbraininstitute.org',
       'sudo_on_bastion'    => false,
       'uid'                => 1035,
     },
