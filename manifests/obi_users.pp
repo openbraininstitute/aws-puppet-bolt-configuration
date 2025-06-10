@@ -77,6 +77,12 @@ class aws::obi_users () {
       'public_key'         => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEtJ5W8bXdNWUtgxXTT2F5HsnMquuPIpnmsEPzrHgTEY aws',
       'sudo_on_bastion'    => false,
       'uid'                => 1035,
+    },
+    {
+      'name'               => 'zisis',
+      'public_key'         => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC1at36VDXWXddTNr0mhC2BUOztxUiSbDj1Bz/GRvLlid1D71MP+4e/RMv8553L7B2ovGymcJtWM7vfrP728lMr8F9zXU599qmdN+VcP+1xvpu5LPKUGopwKHDXbiZAGuKVqk3xRNmTpa54/wVXZsv5Pakyiu1lnqQkLaVFBcLjDZG98fN5O4vJ3nP8wnc3UVVrNg57mAErgHmnFe6K+IBRor/lZ27ffiDylzrwuFdKoQ91+LIOwQkrz49vKgvnvpy4QNtM7zWGzs/kQh2417LOCA/SkIyZl8i5M8ca663E6jeQekP6N+BxJkFyHaQzseQn/ptA/U/mLDG8E3SR/SbHfz28KMPA3Nv5kcC2Lh9AaWO4PFmmBbP5MS8WAQ02bKhI3dvskCm9HoZhpsh5SvMW9YhoFumuTOTpDXLq+4j9UI2niaiyxIuaZ+RmhJLEHiAnMLeg6bjpYG4Hbon99+fANF6DloxEqDQRl4j3+KZZzuY2FIL3U/D6SluamhqPpiyMgBLcZaeGqbhTTPPAeppBIJ78j4rq01cvQ+MTBTZL2l1GD8ZvbKkuCC2nxrz+xni2+VTO7VmjH59tks/21lRvsHqJi+OXC8atrw/uyU9wwkIbKsWwgt/FRXKtpz1dGVVuA4evPQcsnuuapfMUbcnWh4gp0B64NrVnww5JXZDVIw== eleftherios.zisis@openbraininstitute.org',
+      'sudo_on_bastion'    => false,
+      'uid'                => 1036,
     }
   ]
 
